@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "zip -r target/node-api-container.zip node_modules manifest.json *.js"
+    "prepublish": "zip -r node-api-container.zip node_modules manifest.json *.js"
   },
   "author": "W Brian Leonard",
   "license": "ISC",
