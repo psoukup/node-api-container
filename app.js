@@ -51,9 +51,9 @@ app.post('/messaging', function (req, res) {
     var response = {
         "platformId": platformId,
         "domainId": domainId,
-        "owner": "qui enim",
-        "status": "officia dolore cupidatat reprehenderit",
-        "activationDate": "dolor velit minim do",
+        "owner": "W Brian Leonard",
+        "status": "Active",
+        "activationDate": "November 11, 2011",
         "accountId": accountId,
         "clientRequestId": clientRequestId
     }
