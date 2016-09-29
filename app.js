@@ -42,6 +42,8 @@ app.post('/messaging', function (req, res) {
    var domainId = req.body.request[0].data.domain;
    var accountId = req.body.request[0].data.accountId;
    console.log(platformId, domainId, accountId);
+    
+    
    
     
   //console.log(platformId.toString());
@@ -56,6 +58,7 @@ app.post('/messaging', function (req, res) {
         "clientRequestId": clientRequestId
     }
 
+    res.setHeader('Content-Type', 'application/json');
     res.send(response);
     
 })
