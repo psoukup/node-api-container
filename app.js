@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/messaging', function (req, res) {
-    
+
     var clientRequestId = req.param('clientRequestId', 'Not Provided');
 
     var response = {
@@ -28,39 +28,34 @@ app.get('/messaging', function (req, res) {
 });
 
 app.post('/messaging', function (req, res) {
-    
-    //var clientRequestId = req.param('clientRequestId', 'Not Provided');
-    var clientRequestId = req.query.clientRequestId;
-    
+
+    //var clientRequestId = req.query.clientRequestId;
+
     console.log(req.body);
     //console.log(req.body.clientInfo.apiAccessKey);
     //console.log(req.body.request);
     console.log("");
     console.log(req.body.request[0]);
     console.log(req.body.request[0].platformId);
-   var platformId = req.body.request[0].platformId;
-   var domainId = req.body.request[0].data.domain;
-   var accountId = req.body.request[0].data.accountId;
-   console.log(platformId, domainId, accountId);
-    
-    
-   
-    
-  //console.log(platformId.toString());
+    var platformId = req.body.request[0].platformId;
+    var clientRequestId = req.body.request[0].clientRequestId;
+    var domainId = req.body.request[0].data.domain;
+    var accountId = req.body.request[0].data.accountId;
+    console.log(platformId, domainId, accountId);
 
     var response = {
         "platformId": platformId,
         "domainId": domainId,
         "owner": "W Brian Leonard",
         "status": "Active",
-        "activationDate": "November 11, 2011",
+        "activationDate": "November 11, 2001",
         "accountId": accountId,
         "clientRequestId": clientRequestId
     }
 
     res.setHeader('Content-Type', 'application/json');
     res.send(response);
-    
+
 })
 
 app.listen(PORT, function () {
