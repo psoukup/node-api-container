@@ -19,7 +19,7 @@ app.get('/messaging', function (req, res) {
         "domainId": 12520225,
         "owner": "qui enim",
         "status": "officia dolore cupidatat reprehenderit",
-        "activationDate": "dolor velit minim do",
+        "activationDate": "November 8, 2016",
         "accountId": -21241144,
         "clientRequestId": clientRequestId
     };
