@@ -17,7 +17,7 @@ app.get('/messaging', function (req, res) {
     var response = {
         "platformId": 28380871,
         "domainId": 12520225,
-        "owner": "qui enim",
+        "owner": "W Brian Leonard",
         "status": "officia dolore cupidatat reprehenderit",
         "activationDate": "November 8, 2016",
         "accountId": -21241144,
