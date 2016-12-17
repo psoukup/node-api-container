@@ -64,6 +64,30 @@ app.post('/messaging', function (req, res) {
 
 })
 
+app.post('/platforms/:platformId/domains/:domainId/accounts/:accountId', function (req, res) {
+
+    console.log(req.body);
+    
+    var platformId = req.params.platformId;
+    var domainId = req.params.domainId;
+    var accountId = req.params.accountId;
+    var clientRequestId = req.query.clientRequestId;
+
+    var response = {
+        "platformId": platformId,
+        "domainId": domainId,
+        "owner": "W Brian Leonard",
+        "status": "Active",
+        "activationDate": "November 11, 2001",
+        "accountId": accountId,
+        "clientRequestId": clientRequestId
+    }
+
+    res.setHeader('Content-Type', 'application/json');
+    res.send(response);
+
+})
+
 app.listen(PORT, function () {
     console.log('Example app listening on port ' + PORT + '!');
 })
