@@ -3,6 +3,7 @@ A generic Node Express container application for creating APIs to be used in dem
 
 ## APIs
 
-Hello World - https://nodeapicontainer-gse00001975.apaas.em2.oraclecloud.com/
+### Hello World - https://nodeapicontainer-gse00001975.apaas.em2.oraclecloud.com/
 
-Messaging - https://nodeapicontainer-gse00001975.apaas.em2.oraclecloud.com/messaging
+###Messaging - https://nodeapicontainer-gse00001975.apaas.em2.oraclecloud.com/messaging
+Documentation: http://docs.level1esbmessaging.apiary.io/#
