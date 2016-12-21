@@ -3,8 +3,12 @@ var bodyParser = require('body-parser');
 var app = express();
 var PORT = process.env.PORT || 80;
 
+var decoderRouter = require('./routes/decoderRouter');
+app.use('/decoder', decoderRouter);
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
 
 app.get('/', function (req, res) {
     res.send('Hello World!');
