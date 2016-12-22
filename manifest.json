@@ -3,7 +3,7 @@
     "majorVersion":"0.12"
   },
   "command": "node app.js",
-  "startupTime" : "120",
+  "startupTime" : "600",
   "release": {},
   "notes": ""
 }
