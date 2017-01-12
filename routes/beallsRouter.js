@@ -24,22 +24,33 @@ router.get('/catalog', function (req, res) {
     
     var queryString = req.query.queryString;
     var queryScope = req.query.queryScope;
+    var minMatch = req.query.minMatch;
     
     console.log("queryString: " + queryString);
     console.log("queryScope: " + queryScope);
     
-    if (queryString === 'Florida Gator Pants' || queryScope === 'All') {
+    if (queryString === 'Florida Gator Pants' || queryScope === 'All' || minMatch.substring(0,1) === '2') {
     
         var response = {
-            "recordSetTotal":"1",
-            "sequenceId": "12003_-1_1.00000",
-            "name": "Florida Gator Pants",
-            "uniqueID": "144075",
-            "storeID": "10051",
-            "seo_token_ntk": "pants",            
+            "recordSetTotalMatches":"0",
+            "recordSetTotal": 0,
+             "resourceName": "productview",
+             "resourceId": "https://qa-api.inc.com/search/resources/store/10151/productview/bySearchTerm/alia%20dunner%20clothing?pageNumber=1&pageSize=10&catalogId=12003",
+             "recordSetStartNumber": 0,
+             "recordSetComplete": "true",
+             "recordSetCount": 0,
+             "catalogEntryView": [],
+             "metaData": {
+               "spellcheck": [
+                 "aqua",
+                 "all"
+               ],
+               "price": "1",
             "queryString" : queryString,
-            "queryScope": queryScope
-            } 
+            "queryScope": queryScope,
+            "minMatch": minMatch
+            }
+        }         
     } else {
         var response = {
             "recordSetTotal": 0
