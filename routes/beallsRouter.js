@@ -24,6 +24,8 @@ router.get('/catalog', function (req, res) {
     var queryScope = req.query.queryScope;
     var minMatch = req.query.minMatch;
     
+    minMatch = ((typeof minMatch == 'undefined') ? "0" : minMatch)
+    
     console.log("queryString: " + queryString);
     console.log("queryScope: " + queryScope);
     
