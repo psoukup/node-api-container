@@ -32,8 +32,8 @@ router.get('/catalog', function (req, res) {
     if (queryString === 'Florida Gator Pants' || queryScope === 'All' || minMatch.substring(0,1) === '2') {
     
         var response = {
-            "recordSetTotalMatches":"0",
-            "recordSetTotal": 0,
+            "recordSetTotalMatches":"1",
+            "recordSetTotal": 1,
              "resourceName": "productview",
              "resourceId": "https://qa-api.inc.com/search/resources/store/10151/productview/bySearchTerm/alia%20dunner%20clothing?pageNumber=1&pageSize=10&catalogId=12003",
              "recordSetStartNumber": 0,
@@ -79,8 +79,8 @@ router.get('/bySearchTerm/:searchTerm', function (req, res) {
     if (searchTerm === 'alia dunner pants' || minMatch.substring(0,1) === '2') {
     
         var response = {
-            "recordSetTotalMatches":"0",
-            "recordSetTotal": 0,
+            "recordSetTotalMatches":"1",
+            "recordSetTotal": 1,
              "resourceName": "productview",
              "resourceId": "https://qa-api.inc.com/search/resources/store/10151/productview/bySearchTerm/alia%20dunner%20clothing?pageNumber=1&pageSize=10&catalogId=12003",
              "recordSetStartNumber": 0,
