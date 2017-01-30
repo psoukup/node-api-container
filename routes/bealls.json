@@ -12353,8 +12353,7 @@
                         "12003_71064"]
                 }, {
                     "shortDescription": "Plus Size",
-                    "sequence": ["12003_-1_1.20000",
-                        "12003_15062_1.00000"],
+                    "sequence": "12003_-1_1.20000",                       
                     "resourceId": "https:\/\/qa-api.acme.com\/search\/resources\/store\/10151\/categoryview\/byId\/15103",
                     "identifier": "Women Plus Size Apparel",
                     "catalogGroupView": [{
