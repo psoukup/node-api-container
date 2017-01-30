@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
         "domainId": 12520225,
         "owner": "W Brian Leonard",
         "status": "officia dolore cupidatat reprehenderit",
-        "activationDate": "November 8, 2016",
+        "activationDate": "January 30th, 2017",
         "accountId": -21241144,
         "clientRequestId": clientRequestId
     };
