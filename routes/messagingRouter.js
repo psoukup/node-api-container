@@ -1,5 +1,7 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var router = express.Router();
+router.use(bodyParser.json());
 
 router.use(function (req, res, next) {
     //Enable CORS support...
@@ -38,7 +40,7 @@ router.post('/', function (req, res) {
     var domainId = defaultResponse;
     var accountId = defaultResponse;
 
-    if (typeof req.body.request !== 'undefined') {
+    if (typeof req.body !== 'undefined') {
         console.log(req.body.request[0]);
         console.log(req.body.request[0].platformId);
         var platformId = req.body.request[0].platformId;
