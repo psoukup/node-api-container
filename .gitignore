@@ -39,3 +39,8 @@ Thumbs.db
 # Node.js #
 ###########
 node_modules/
+
+# Other #
+#########
+nbproject/private/private.xml
+routes/bealls - orig.json

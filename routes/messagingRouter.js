@@ -9,7 +9,7 @@ router.use(function (req, res, next) {
 });
 
 
-app.get('/', function (req, res) {
+router.get('/', function (req, res) {
 
     var clientRequestId = req.query.clientRequestId;
 
@@ -26,7 +26,7 @@ app.get('/', function (req, res) {
     res.send(response);
 });
 
-app.post('/', function (req, res) {
+router.post('/', function (req, res) {
 
     //var clientRequestId = req.query.clientRequestId;
 

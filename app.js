@@ -9,8 +9,8 @@ app.use('/decoder', decoderRouter);
 var beallsRouter = require('./routes/beallsRouter');
 app.use('/bealls', beallsRouter);
 
-var beallsRouter = require('./routes/messagingRouter');
-app.use('/messaging', beallsRouter);
+var messagingRouter = require('./routes/messagingRouter');
+app.use('/messaging', messagingRouter);
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
