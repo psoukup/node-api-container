@@ -53,7 +53,7 @@ router.post('/', function (req, res) {
     var response = {
         "platformId": platformId,
         "domainId": domainId,
-        "owner": "W Brian Leonard",
+        "owner": "W Bran Leonard",
         "status": "Active",
         "activationDate": "November 11, 2001",
         "accountId": accountId,
