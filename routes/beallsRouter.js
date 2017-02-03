@@ -75,8 +75,9 @@ router.get('/bySearchTerm/:searchTerm', function (req, res) {
     
     console.log("searchTerm: " + searchTerm);
     console.log("minMatch: " + minMatch);
-    
-    if (searchTerm === 'alia dunner pants' || minMatch.substring(0,1) === '2') {
+      
+    // I've added a single word search term for testing search terms w/out spaces...
+    if (searchTerm === 'alia' || searchTerm === 'alia dunner pants' || minMatch.substring(0,1) === '2') {
     
         var response = {
             "recordSetTotalMatches":"1",
