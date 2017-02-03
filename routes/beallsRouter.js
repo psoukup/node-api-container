@@ -83,9 +83,9 @@ router.get('/bySearchTerm/:searchTerm', function (req, res) {
             "recordSetTotal": 1,
              "resourceName": "productview",
              "resourceId": "https://qa-api.inc.com/search/resources/store/10151/productview/bySearchTerm/alia%20dunner%20clothing?pageNumber=1&pageSize=10&catalogId=12003",
-             "recordSetStartNumber": 0,
+             "recordSetStartNumber": 1,
              "recordSetComplete": "true",
-             "recordSetCount": 0,
+             "recordSetCount": 1,
              "catalogEntryView": [],
              "metaData": {
                "spellcheck": [
