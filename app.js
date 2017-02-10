@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-var PORT = process.env.PORT || 80;
+var PORT = process.env.PORT || 8080;
 
 var decoderRouter = require('./routes/decoderRouter');
 app.use('/decoder', decoderRouter);
