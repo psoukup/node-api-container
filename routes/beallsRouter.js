@@ -82,7 +82,7 @@ router.get('/bySearchTerm/:searchTerm', function (req, res) {
         var response = {
             "recordSetTotalMatches":"1",
             "recordSetTotal": 1,
-             "resourceName": "kitchenware",
+             "resourceName": "clothing",
              "resourceId": "https://qa-api.lminc.com/search/resources/store/10151/productview/bySearchTerm/" + searchTerm + "?pageNumber=1&pageSize=10&catalogId=12003",
              "recordSetStartNumber": 1,
              "recordSetComplete": "true",
