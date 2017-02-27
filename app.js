@@ -3,11 +3,14 @@ var bodyParser = require('body-parser');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+var beallsRouter = require('./routes/beallsRouter');
+app.use('/bealls', beallsRouter);
+
 var decoderRouter = require('./routes/decoderRouter');
 app.use('/decoder', decoderRouter);
 
-var beallsRouter = require('./routes/beallsRouter');
-app.use('/bealls', beallsRouter);
+var instructionalRouter = require('./routes/instructionalRouter');
+app.use('/instructional', instructionalRouter);
 
 var messagingRouter = require('./routes/messagingRouter');
 app.use('/messaging', messagingRouter);
