@@ -2,13 +2,6 @@ var express = require('express');
 var router = express.Router();
 var cors = require('cors');
 
-//router.use(function (req, res, next) {
-//    //Enable CORS support...
-//    res.header("Access-Control-Allow-Origin", "*");
-//    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Access-Control-Allow-Headers, Accept");
-//    next();
-//});
-
 router.use(cors());
 
 // will handle any request that ends in /instructional
