@@ -58,7 +58,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
         var response = [
             {
                 "title": "The Cosmic Perspective, 2nd edition",
-                "arthor(s)": [
+                "authors": [
                     "Bennett",
                     "Donahue",
                     "Schneider",
@@ -69,7 +69,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
             },
             {
                 "title": "Astronomy Today, 8th edition",
-                "arthor(s)": [
+                "authors": [
                     "Chaisson ",
                     "McMillan"
                 ],
@@ -78,7 +78,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
             },
             {
                 "title": "Astronomy: A Beginner's Guide to the Universe, 5th edition",
-                "arthor(s)": [
+                "authors": [
                     "Chaisson ",
                     "McMillan"
                 ],
