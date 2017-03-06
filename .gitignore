@@ -42,5 +42,8 @@ node_modules/
 
 # Other #
 #########
-nbproject/private/private.xml
+nbproject/private
 routes/bealls - orig.json
+routes/data.json
+routes/products.json
+routes/products_small.json

@@ -6,6 +6,9 @@ var PORT = process.env.PORT || 8080;
 var beallsRouter = require('./routes/beallsRouter');
 app.use('/bealls', beallsRouter);
 
+var bestBuyRouter = require('./routes/bestBuyRouter');
+app.use('/bestbuy', bestBuyRouter);
+
 var decoderRouter = require('./routes/decoderRouter');
 app.use('/decoder', decoderRouter);
 
