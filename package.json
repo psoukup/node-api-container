@@ -4,19 +4,21 @@
   "description": "Test messaging ESB implementation for Web.com",
   "main": "index.js",
   "scripts": {
-    "start" : "node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepublish": "zip -r node-api-container.zip node_modules routes manifest.json *.js"
   },
   "author": "W Brian Leonard",
   "license": "ISC",
   "dependencies": {
+    "JSONStream": "^1.3.1",
     "body-parser": "^1.15.2",
-    "express": "^4.14.0",
     "cors": "^2.8.1",
-    "request": "^2.79.0",
-    "jsonStream": "^1.3.1",
-    "event-stream": "^3.3.4"
+    "event-stream": "^3.3.4",
+    "express": "^4.14.0",
+    "request": "^2.79.0"
   },
-  "engines" : { "node" : "*" }
+  "engines": {
+    "node": "*"
+  }
 }
