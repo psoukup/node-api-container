@@ -2,6 +2,15 @@ var express = require('express');
 var router = express.Router();
 var cors = require('cors');
 
+//
+/* Because of bug (https://bug.oraclecorp.com/pls/bug/webbug_print.show?c_rptno=24943301)
+ /* oracledb will not build in DevCS until the 17.2.3 release. Once that realese 
+ * is out add the depenency:
+ * "oracledb": "^1.12.2",
+ * to package.json.
+ */
+var oracledb = require('oracledb');
+
 router.use(cors());
 
 // will handle any request that ends in /instructional
@@ -53,6 +62,9 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
 
     console.log("discipline: " + discipline);
 
+    // Holding off on my node.js implementation until oracledb is supported by DevCS
+    //getBooks(discipline.toLowerCase());
+
     if (discipline.toLowerCase() === 'astronomy') {
 
         var response = [
@@ -86,7 +98,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                 "cover_image": "http://www.webassign.net/bg/bg5_cover_sm.jpg"
             }
         ];
-        
+
     } else {
         var response = ["Unknown discipline"];
     }
@@ -95,6 +107,44 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
     res.send(response);
 
 });
+
+function getBooks(discipline) {
+
+    oracledb.getConnection({
+        user: "DevOps",
+        password: "DevOps",
+        connectString: "localhost:1521/PDB1.gse00001970.oraclecloud.internal" //.wbrianleonard.oraclecloud.internal"  
+    }, function (err, connection) {
+        if (err) {
+            console.error(err.message);
+            return;
+        }
+        var sqlString = "SELECT books.title, authors.name, books.publisher, books.cover_image FROM BOOKS JOIN AUTHORS on books.book_id=authors.book_id WHERE books.discipline='"+discipline+"'"
+        console.log(sqlString);
+        connection.execute(sqlString,
+                [],
+                function (err, result) {
+                    if (err) {
+                        console.error(err.message);
+                        doRelease(connection);
+                        return;
+                    }
+                    console.log(result.metaData);
+                    console.log(result.rows);
+                    doRelease(connection);
+                });
+    });
+}
+
+function doRelease(connection) {
+    connection.release(
+            function (err) {
+                if (err) {
+                    console.error(err.message);
+                }
+            }
+    );
+}
 
 module.exports = router;
 
