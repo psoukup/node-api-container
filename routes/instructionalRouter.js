@@ -67,37 +67,43 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
 
     if (discipline.toLowerCase() === 'astronomy') {
 
-        var response = [
-            {
-                "title": "The Cosmic Perspective, 2nd edition",
-                "authors": [
-                    "Bennett",
-                    "Donahue",
-                    "Schneider",
-                    "Voit"
-                ],
-                "publisher": "Brian Education",
-                "cover_image": "http://www.webassign.net/bdsvastro/BDSVastr02_cover_sm.jpg"
-            },
-            {
-                "title": "Astronomy Today, 8th edition",
-                "authors": [
-                    "Chaisson ",
-                    "McMillan"
-                ],
-                "publisher": "Pearson Education",
-                "cover_image": "http://www.webassign.net/chaastrot8/chaastrot8_cover_sm.jpg"
-            },
-            {
-                "title": "Astronomy: A Beginner's Guide to the Universe, 5th edition",
-                "authors": [
-                    "Chaisson ",
-                    "McMillan"
-                ],
-                "publisher": "Pearson Education",
-                "cover_image": "http://www.webassign.net/bg/bg5_cover_sm.jpg"
-            }
-        ];
+        var response =
+                {
+                    "recordsFound": 3,
+                    "searchTerm:": discipline,
+                    "relaxed:": false,
+                    "results": [
+                        {
+                            "title": "The Cosmic Perspective, 2nd edition",
+                            "authors": [
+                                "Bennett",
+                                "Donahue",
+                                "Schneider",
+                                "Voit"
+                            ],
+                            "publisher": "Brian Education",
+                            "cover_image": "http://www.webassign.net/bdsvastro/BDSVastr02_cover_sm.jpg"
+                        },
+                        {
+                            "title": "Astronomy Today, 8th edition",
+                            "authors": [
+                                "Chaisson ",
+                                "McMillan"
+                            ],
+                            "publisher": "Pearson Education",
+                            "cover_image": "http://www.webassign.net/chaastrot8/chaastrot8_cover_sm.jpg"
+                        },
+                        {
+                            "title": "Astronomy: A Beginner's Guide to the Universe, 5th edition",
+                            "authors": [
+                                "Chaisson ",
+                                "McMillan"
+                            ],
+                            "publisher": "Pearson Education",
+                            "cover_image": "http://www.webassign.net/bg/bg5_cover_sm.jpg"
+                        }
+                    ]
+                };
 
     } else {
         var response = ["Unknown discipline"];
@@ -119,7 +125,7 @@ function getBooks(discipline) {
             console.error(err.message);
             return;
         }
-        var sqlString = "SELECT books.title, authors.name, books.publisher, books.cover_image FROM BOOKS JOIN AUTHORS on books.book_id=authors.book_id WHERE books.discipline='"+discipline+"'"
+        var sqlString = "SELECT books.title, authors.name, books.publisher, books.cover_image FROM BOOKS JOIN AUTHORS on books.book_id=authors.book_id WHERE books.discipline='" + discipline + "'";
         console.log(sqlString);
         connection.execute(sqlString,
                 [],
