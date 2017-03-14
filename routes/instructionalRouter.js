@@ -72,8 +72,8 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
         var response =
                 {
                     "recordsFound": 3,
-                    "searchTerm:": discipline,
-                    "relaxed:": relax,
+                    "searchTerm": discipline,
+                    "relaxed": relax,
                     "results": [
                         {
                             "title": "The Cosmic Perspective, 2nd edition",
