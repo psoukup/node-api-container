@@ -106,7 +106,12 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                 };
 
     } else {
-        var response = ["Unknown discipline"];
+        var response = 
+                {
+                    "recordsFound": 0,
+                    "searchTerm:": discipline,
+                    "relaxed:": false
+                };                
     }
 
     res.setHeader('Content-Type', 'application/json');
