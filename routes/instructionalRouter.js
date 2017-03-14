@@ -59,19 +59,21 @@ router.get('/instructors/disciplines', function (req, res, next) {
 router.get('/instructors/disciplines/:discipline', function (req, res) {
 
     var discipline = req.params.discipline;
-
+    var relax = ((typeof req.query.relax !== 'undefined') ? req.query.relax : false);
+    
     console.log("discipline: " + discipline);
+    console.log("relax: " + relax);
 
     // Holding off on my node.js implementation until oracledb is supported by DevCS
     //getBooks(discipline.toLowerCase());
 
-    if (discipline.toLowerCase() === 'astronomy') {
+    if (discipline.toLowerCase() === 'astronomy' || relax === "true") {
 
         var response =
                 {
                     "recordsFound": 3,
                     "searchTerm:": discipline,
-                    "relaxed:": false,
+                    "relaxed:": relax,
                     "results": [
                         {
                             "title": "The Cosmic Perspective, 2nd edition",
