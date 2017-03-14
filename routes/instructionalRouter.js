@@ -111,8 +111,8 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
         var response = 
                 {
                     "recordsFound": 0,
-                    "searchTerm:": discipline,
-                    "relaxed:": false
+                    "searchTerm": discipline,
+                    "relaxed": false
                 };                
     }
 
