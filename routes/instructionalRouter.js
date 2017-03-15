@@ -59,7 +59,7 @@ router.get('/instructors/disciplines', function (req, res, next) {
 router.get('/instructors/disciplines/:discipline', function (req, res) {
 
     var discipline = req.params.discipline;
-    var relax = ((typeof req.query.relax !== 'undefined') ? req.query.relax : false);
+    var relax = ((typeof req.query.relax !== 'undefined') ? req.query.relax : "false");
     
     console.log("discipline: " + discipline);
     console.log("relax: " + relax);
@@ -83,7 +83,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                                 "Schneider",
                                 "Voit"
                             ],
-                            "publisher": "Brian Education",
+                            "publisher": "Pearson Education",
                             "cover_image": "http://www.webassign.net/bdsvastro/BDSVastr02_cover_sm.jpg"
                         },
                         {
