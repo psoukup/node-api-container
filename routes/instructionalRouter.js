@@ -9,7 +9,7 @@ var cors = require('cors');
  * "oracledb": "^1.12.2",
  * to package.json.
  */
-var oracledb = require('oracledb');
+//var oracledb = require('oracledb');
 
 router.use(cors());
 
