@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Node.js API Container</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+    </style>
+    <body>
+        <H1>Node.js API Container</h1>
+        <div>A generic Node Express container application for creating APIs that can be used in demonstrations.</div>
+
+        <H2>What's Available</H2>
+            <h3>AppDev Decoder Microservice</h3>
+            <table>
+                <tr><th>Microservice</th><th>Description</th></tr>
+                <tr><td><a href="../decoder">/decoder</a></td><td>This microservice was created for a Fusion Friday presentation. It returns a list of AppDev terms and their definitions.</td></tr>
+            </table>
+
+            <h3>Library Microservice</h3>
+            The Library microservice returns a set of books associated with a provided discipline. See the full documentation here <a href='http://docs.instructional.apiary.io/#' target="_new">Instructional.</a>
+
+            <table>
+                <tr><th>Microservice</th><th>Description</th></tr>
+                <tr><td><a href='../instructional'>/instructional</a></td><td>Main menu of items. Only <a href='../instructional/instructors'> has been implemented.</a></td></tr>
+                <tr><td><a href='../instructional/instructors'>/instructional/instructors</a></td><td>List of Instructors. Only <a href='../instructional/instructors/disciplines'>Disciplines</a> has been implemented.</td></tr>
+                <tr><td><a href='../instructional/instructors/disciplines'>/instructional/instructors/disciplines</a></td><td>List of Disciplines. Only <a href='../instructional/instructors/disciplines/astronomy'>Astronomy</a> has been implemented.</td></tr>
+                <tr><td><a href='../instructional/instructors/disciplines/astronomy'>/instructional/instructors/disciplines/astronomy</a></td><td>Text book matching the Astronomy discipline.</td></tr>
+                <tr><td><a href='../instructional/instructors/disciplines/math'>/instructional/instructors/disciplines/math</a></td><td>A search example where zero records are found.</td></tr>
+                <tr><td><a href='../instructional/instructors/disciplines/math?relax=true'>/instructional/instructors/disciplines/math?relax=true</a></td><td>A relaxed search example.</td></tr>
+            </table>
+    </body>
+</html>

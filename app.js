@@ -1,5 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var fs = require('fs');
 var app = express();
 var PORT = process.env.PORT || 8080;
 
@@ -23,7 +24,9 @@ app.use(bodyParser.json());
 
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    //res.send('Hello World!');
+    var html = fs.readFileSync('home.html').toString();
+    res.send(html);
 });
 
 // For easy browser testing...
