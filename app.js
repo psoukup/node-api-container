@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var fs = require('fs');
 var app = express();
 var PORT = process.env.PORT || 8080;
+var APP_HOME = process.env.APP_HOME || './';
 
 var beallsRouter = require('./routes/beallsRouter');
 app.use('/bealls', beallsRouter);
@@ -25,7 +26,7 @@ app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     //res.send('Hello World!');
-    var html = fs.readFileSync('./home.html').toString();
+    var html = fs.readFileSync(APP_HOME+'/home.html').toString();
     res.send(html);
 });
 
