@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
     //res.send('Hello World!');
-    var html = fs.readFileSync('home.html').toString();
+    var html = fs.readFileSync('./home.html').toString();
     res.send(html);
 });
 
