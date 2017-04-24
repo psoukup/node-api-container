@@ -63,7 +63,6 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
     
     console.log("discipline: " + discipline);
     console.log("relax: " + relax);
-    console.log("Request Headers: " + req.headers);
 
     // Holding off on my node.js implementation until oracledb is supported by DevCS
     //getBooks(discipline.toLowerCase());
@@ -120,6 +119,14 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     res.send(response);
 
+});
+
+// will handle any request that ends in /instructional/headers
+router.get('/headers', function (req, res, next) {
+    var response = {
+        "headers": req.headers
+    };
+    res.send(response);
 });
 
 function getBooks(discipline) {
