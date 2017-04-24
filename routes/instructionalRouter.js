@@ -63,6 +63,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
     
     console.log("discipline: " + discipline);
     console.log("relax: " + relax);
+    console.log("Request Headers: " + req.headers);
 
     // Holding off on my node.js implementation until oracledb is supported by DevCS
     //getBooks(discipline.toLowerCase());
