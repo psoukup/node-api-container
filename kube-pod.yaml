@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-api-containert
+  labels:
+    app: node-api-container
+spec:
+  containers:
+    - name: node-api-container
+      image: wbleonard/node-api-container:latest
+      ports:
+      - containerPort: 8080
