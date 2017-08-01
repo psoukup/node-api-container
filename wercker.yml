@@ -62,7 +62,7 @@ deploy:
 
 
 # Push to the Google Container Registry
-push-to_gcr:
+push-to-gcr:
     - internal/docker-push:
         username: _json_key
         password: $GCR_JSON_KEY_FILE
