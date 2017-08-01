@@ -63,11 +63,12 @@ deploy:
 
 # Push to the Google Container Registry
 push-to-gcr:
-    - internal/docker-push:
-        username: _json_key
-        password: $GCR_JSON_KEY_FILE
-        repository: gcr.io/node-api-container-175518/node-api-container
-        registry: https://gcr.io/v2
+    steps:
+      - internal/docker-push:
+          username: _json_key
+          password: $GCR_JSON_KEY_FILE
+          repository: gcr.io/node-api-container-175518/node-api-container
+          registry: https://gcr.io/v2
         
 # Push to AWS Elastic Container Registry
 push-to-ecr:
