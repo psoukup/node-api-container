@@ -34,3 +34,11 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+push-to-ecr:
+  steps:
+    - internal/docker-push:
+        aws-access-key: $AWS_ACCESS_KEY_ID
+        aws-secret-key: $AWS_SECRET_ACCESS_KEY
+        aws-region: $AWS_REGION
+        aws-registry-id: $AWS_REGISTRY_ID
+        repository: node-api-container 

@@ -47,3 +47,8 @@ routes/bealls - orig.json
 routes/data.json
 routes/products.json
 routes/products_small.json
+.wercker.yml.un~
+wercker.yml~
+..gitignore.un~
+.gitignore~
+
