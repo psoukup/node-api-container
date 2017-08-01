@@ -47,6 +47,19 @@ deploy:
         repository: wbleonard/node-api-container
         registry: https://registry.hub.docker.com
 
+# Deploy to AWS Elastic Beanstalk
+#deploy:
+#  steps:
+#  - koding/eb-deploy@0.31.0:
+#      access-key: $AWS_KEY
+#      secret-key: $AWS_SECRET
+#      app-name: node-api-container
+#      env-name: node-api-container
+#      version-label: 1.0
+#      region: $AWS_REGION
+#      s3-bucket: s3://node-api-container/
+#      s3-key: my-wordpress-app-1.2.1.tar.gz
+        
 push-to-ecr:
   steps:
     - internal/docker-push:
@@ -54,4 +67,4 @@ push-to-ecr:
         aws-secret-key: $AWS_SECRET_ACCESS_KEY
         aws-region: $AWS_REGION
         aws-registry-id: $AWS_REGISTRY_ID
-        repository: wbleonard/node-api-container 
+        repository: 432275605314.dkr.ecr.us-east-1.amazonaws.com/node-api-container 
