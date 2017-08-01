@@ -41,4 +41,4 @@ push-to-ecr:
         aws-secret-key: $AWS_SECRET_ACCESS_KEY
         aws-region: $AWS_REGION
         aws-registry-id: $AWS_REGISTRY_ID
-        repository: node-api-container 
+        repository: wbleonard/node-api-container 
