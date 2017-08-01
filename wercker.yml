@@ -34,6 +34,19 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+
+# Deploy to DockerHub
+deploy:
+  steps:
+    - internal/docker-push:
+        username: $USERNAME
+        password: $PASSWORD
+        tag: development
+        cmd: "node app.js"
+        ports: "8080"
+        repository: wbleonard/node-api-container
+        registry: https://registry.hub.docker.com
+
 push-to-ecr:
   steps:
     - internal/docker-push:
