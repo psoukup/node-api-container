@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-api-container
+spec:
+  # Automatically find and expose any pods with the label "node-api-container"
+  selector:
+    app: node-api-container
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080	
+      # The range of valid ports is 30000-32767
+      nodePort: 32000
+  # NodePort - Exposes the Service on the same port of each selected Node in the cluster using NAT. 
+  type: NodePort
