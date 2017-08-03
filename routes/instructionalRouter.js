@@ -2,6 +2,13 @@ var express = require('express');
 var router = express.Router();
 var cors = require('cors');
 
+router.use(function (req, res, next) {
+    //Enable CORS support...
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 //
 /* Because of bug (https://bug.oraclecorp.com/pls/bug/webbug_print.show?c_rptno=24943301)
  /* oracledb will not build in DevCS until the 17.2.3 release. Once that realese 
