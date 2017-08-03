@@ -17,16 +17,16 @@ box: node
     # - mongo
     # http://devcenter.wercker.com/docs/services/mongodb.html
 build:
+
   # The steps that will be executed on build
   # Steps make up the actions in your pipeline
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
-    # Set the current working directory to match that in the Dockerfile
-    - cwd: /usr/src/app
-
     # A step that executes `npm install` command
     - npm-install
+
+        cwd: /usr/src/app
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
