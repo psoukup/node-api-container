@@ -83,7 +83,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                                 "Schneider",
                                 "Voit"
                             ],
-                            "publisher": "Testing BEARER_TOKEN Education",
+                            "publisher": "Pearson Education",
                             "cover_image": "http://www.webassign.net/bdsvastro/BDSVastr02_cover_sm.jpg"
                         },
                         {

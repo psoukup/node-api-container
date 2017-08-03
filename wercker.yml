@@ -59,8 +59,6 @@ restart-occs-deployment:
         name: Restart OCCS Deployment
         code: |
           curl -k -X POST 'https://140.86.40.114/api/v2/deployments/API-Container-20170802-172652/webhook/restart?token=hruzvnqd' -H 'authorization: Basic $($BEARER_TOKEN)'
-          #curl -k -X POST 'https://140.86.40.114/api/v2/deployments/API-Container-20170802-172652/webhook/restart?token=hruzvnqd' -H 'authorization: Basic YWRtaW46VyNsY29tZTE='
-
  
 # Deploy to AWS Elastic Beanstalk
 #deploy:
