@@ -83,7 +83,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                                 "Schneider",
                                 "Voit"
                             ],
-                            "publisher": "GCE Education",
+                            "publisher": "OCCS Refresh? Education",
                             "cover_image": "http://www.webassign.net/bdsvastro/BDSVastr02_cover_sm.jpg"
                         },
                         {
