@@ -13,4 +13,4 @@ spec:
       # The range of valid ports is 30000-32767
       nodePort: 32000
   # NodePort - Exposes the Service on the same port of each selected Node in the cluster using NAT. 
-  type: NodePort
+  type: LoadBalancer

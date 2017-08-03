@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: node-api-container-deployment
+spec:
+  # Tell the Deployment how many pods to run matching the template below
+  replicas: 3 
+  # Define a template which specifies how Pods will be created
+  template:
+    metadata:
+      labels:
+        app: node-api-container
+    spec:
+      containers:
+      - name: node-api-container
+        image: wbleonard/node-api-container:development
+        ports:
+        - containerPort: 8080
