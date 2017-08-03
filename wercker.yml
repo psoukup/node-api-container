@@ -22,18 +22,20 @@ build:
   # Read more about steps on our dev center:
   # http://devcenter.wercker.com/docs/steps/index.html
   steps:
+    # Set the current working directory to match that in the Dockerfile
+    - cwd: /usr/src/app
+
     # A step that executes `npm install` command
     - npm-install
-    # A step that executes `npm test` command
-    #- npm-test
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
     - script:
-        name: echo nodejs information
+        name: Validate node version and directory information
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+          echo "pwd ($pwd)"
           echo "ls -ltrah $(ls -ltrah)"
 
 # Deploy to DockerHub
