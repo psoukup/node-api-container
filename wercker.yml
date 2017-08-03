@@ -53,12 +53,12 @@ push-to-dockerhub:
         registry: https://registry.hub.docker.com
 
 # Call OCCS Restart Webhook
-restart-occs:
+restart-occs-deployment:
   steps:
-    -script:
+    - script:
         name: Restart OCCS Deployment
         code: |
-          "curl -k POST 'https://140.86.40.114/api/v2/deployments/API-Container-20170802-172652/webhook/restart?token=hruzvnqd' -H 'authorization: Basic YWRtaW46VyNsY29tZTE='"
+          curl -k POST 'https://140.86.40.114/api/v2/deployments/API-Container-20170802-172652/webhook/restart?token=hruzvnqd' -H 'authorization: Basic YWRtaW46VyNsY29tZTE='
 
  
 # Deploy to AWS Elastic Beanstalk
