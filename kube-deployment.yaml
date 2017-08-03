@@ -1,7 +1,7 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: node-api-container-deployment
+  name: node-api-container
 spec:
   # Tell the Deployment how many pods to run matching the template below
   replicas: 3 
