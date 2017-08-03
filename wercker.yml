@@ -26,7 +26,8 @@ build:
     # A step that executes `npm install` command
     - npm-install
 
-        cwd: /usr/src/app
+# Doesn't work here...
+#        cwd: /usr/src/app
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
@@ -38,14 +39,15 @@ build:
           echo "pwd ($pwd)"
           echo "ls -ltrah $(ls -ltrah)"
 
-# Deploy to DockerHub
-deploy:
+# Push to DockerHub
+push-to-docker-hub:
   steps:
     - internal/docker-push:
         username: $USERNAME
         password: $PASSWORD
         tag: development
-        cmd: "node /pipeline/source/app.js"
+        working-dir: /pipeline/source # For some reason this isn't the default
+        cmd: "node app.js"
         ports: "8080"
         repository: wbleonard/node-api-container
         registry: https://registry.hub.docker.com
