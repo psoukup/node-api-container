@@ -53,7 +53,7 @@ push-to-dockerhub:
         registry: https://registry.hub.docker.com
 
 # Call OCCS Restart Webhook
-restart-occs-deployment:
+restart-occs:
   steps:
     -script:
         name: Restart OCCS Deployment
