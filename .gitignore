@@ -51,4 +51,6 @@ routes/products_small.json
 wercker.yml~
 ..gitignore.un~
 .gitignore~
+.kube-pod.yaml.un~
+kube-pod.yaml~
 
