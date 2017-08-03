@@ -40,7 +40,7 @@ build:
           echo "ls -ltrah $(ls -ltrah)"
 
 # Push to DockerHub
-push-to-docker-hub:
+push-to-dockerhub:
   steps:
     - internal/docker-push:
         username: $USERNAME
