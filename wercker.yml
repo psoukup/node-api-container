@@ -1,33 +1,9 @@
-# This references the default nodejs container from
-# the Docker Hub: https://registry.hub.docker.com/_/node/
-# If you want Nodesource's container you would reference nodesource/node
-# Read more about containers on our dev center
-# http://devcenter.wercker.com/docs/containers/index.html
-box: node
-# This is the build pipeline. Pipelines are the core of wercker
-# Read more about pipelines on our dev center
-# http://devcenter.wercker.com/docs/pipelines/index.html
-
-# You can also use services such as databases. Read more on our dev center:
-# http://devcenter.wercker.com/docs/services/index.html
-# services:
-    # - postgres
-    # http://devcenter.wercker.com/docs/services/postgresql.html
-
-    # - mongo
-    # http://devcenter.wercker.com/docs/services/mongodb.html
+# This Pipeline is run whenever a new git commit is pushed.
 build:
-
-  # The steps that will be executed on build
-  # Steps make up the actions in your pipeline
-  # Read more about steps on our dev center:
-  # http://devcenter.wercker.com/docs/steps/index.html
+  box: node
   steps:
     # A step that executes `npm install` command
     - npm-install
-
-# Doesn't work here...
-#        cwd: /usr/src/app
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
@@ -39,7 +15,8 @@ build:
           echo "pwd $(pwd)"
           echo "ls -ltrah $(ls -ltrah)"
 
-# Push to DockerHub
+# This pipeline will be chained to start at the end of a build pipeline in the
+# Wercker Web Workflows editor.
 push-to-dockerhub:
   steps:
     - internal/docker-push:
@@ -52,7 +29,8 @@ push-to-dockerhub:
         repository: wbleonard/node-api-container
         registry: https://registry.hub.docker.com
 
-# Call OCCS Restart Webhook
+# This pipeline will be chained to start at the end of a build pipeline in the
+# Wercker Web Workflows editor.
 restart-occs-deployment:
   steps:
     - script:
@@ -60,19 +38,29 @@ restart-occs-deployment:
         code: |
           curl -k -X POST 'https://140.86.40.114/api/v2/deployments/API-Container-20170802-172652/webhook/restart?token=hruzvnqd' -H 'authorization: Basic $($BEARER_TOKEN)'
  
-# Deploy to AWS Elastic Beanstalk
-#deploy:
-#  steps:
-#  - koding/eb-deploy@0.31.0:
-#      access-key: $AWS_KEY
-#      secret-key: $AWS_SECRET
-#      app-name: node-api-container
-#      env-name: node-api-container
-#      version-label: 1.0
-#      region: $AWS_REGION
-#      s3-bucket: s3://node-api-container/
-#      s3-key: my-wordpress-app-1.2.1.tar.gz
 
+# This pipeline will be chained to run in parallel with the restart-occs-deplyment pipeline in the 
+# Wercker Web Workflows editor.
+restart-gce-deployment:
+    steps:
+      - kubectl:
+          server: $GCE_KUBERNETES_MASTER
+          username: $GCE_KUBERNETES_USERNAME
+          password: $GCE_KUBERNETES_PASSWORD
+          command: apply -f kube-deployment.yaml
+
+# Deploy to AWS Elastic Beanstalk
+deploy-to-ebs:
+  steps:
+  - koding/eb-deploy@0.31.0:
+      access-key: $AWS_KEY
+      secret-key: $AWS_SECRET
+      app-name: node-api-container
+      env-name: node-api-container
+      version-label: 1.0
+      region: $AWS_REGION
+      s3-bucket: s3://node-api-container/
+      s3-key: my-wordpress-app-1.2.1.tar.gz
 
 # Push to the Google Container Registry
 push-to-gcr:
