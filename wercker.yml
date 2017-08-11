@@ -1,6 +1,6 @@
 # This Pipeline is run whenever a new git commit is pushed.
+box: node
 build:
-  box: node
   steps:
     # A step that executes `npm install` command
     - npm-install
