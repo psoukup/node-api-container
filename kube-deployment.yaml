@@ -14,5 +14,6 @@ spec:
       containers:
       - name: node-api-container
         image: wbleonard/node-api-container:development
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
