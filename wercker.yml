@@ -1,5 +1,7 @@
-# This Pipeline is run whenever a new git commit is pushed.
+# Use Node as the base container
 box: node
+
+# This Pipeline is run whenever a new git commit is pushed.
 build:
   steps:
     # A step that executes `npm install` command
