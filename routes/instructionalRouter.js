@@ -90,7 +90,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                                 "Schneider",
                                 "Voit"
                             ],
-                            "publisher": "Pearson Education",
+                            "publisher": "GCE Education",
                             "cover_image": "http://www.webassign.net/bdsvastro/BDSVastr02_cover_sm.jpg"
                         },
                         {

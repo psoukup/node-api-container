@@ -4,12 +4,13 @@ metadata:
   name: node-api-container
 spec:
   # Tell the Deployment how many pods to run matching the template below
-  replicas: 3 
+  replicas: 2 
   # Define a template which specifies how Pods will be created
   template:
     metadata:
       labels:
         app: node-api-container
+        version: demo
     spec:
       containers:
       - name: node-api-container
