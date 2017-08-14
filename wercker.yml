@@ -1,4 +1,4 @@
-# Use Node as the base container
+# Use Node as the base container. Like FROM in Dockerfile.
 box: node
 
 # This Pipeline is run whenever a new git commit is pushed.
