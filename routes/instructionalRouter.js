@@ -11,7 +11,7 @@ router.use(function (req, res, next) {
 
 //
 /* Because of bug (https://bug.oraclecorp.com/pls/bug/webbug_print.show?c_rptno=24943301)
- /* oracledb will not build in DevCS until the 17.2.3 release. Once that realese 
+ /* oracledb will not build in DevCS until the 17.2.3 release. Once that realese
  * is out add the depenency:
  * "oracledb": "^1.12.2",
  * to package.json.
@@ -67,7 +67,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
 
     var discipline = req.params.discipline;
     var relax = ((typeof req.query.relax !== 'undefined') ? req.query.relax : "false");
-    
+
     console.log("discipline: " + discipline);
     console.log("relax: " + relax);
 
@@ -83,7 +83,7 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                     "relaxed": relax,
                     "results": [
                         {
-                            "title": "The Cosmic Perspective, 2nd edition",
+                            "title": "My Adventures",
                             "authors": [
                                 "Bennett",
                                 "Donahue",
@@ -115,12 +115,12 @@ router.get('/instructors/disciplines/:discipline', function (req, res) {
                 };
 
     } else {
-        var response = 
+        var response =
                 {
                     "recordsFound": 0,
                     "searchTerm": discipline,
                     "relaxed": relax
-                };                
+                };
     }
 
     res.setHeader('Content-Type', 'application/json');
@@ -141,7 +141,7 @@ function getBooks(discipline) {
     oracledb.getConnection({
         user: "DevOps",
         password: "DevOps",
-        connectString: "localhost:1521/PDB1.gse00001970.oraclecloud.internal" //.wbrianleonard.oraclecloud.internal"  
+        connectString: "localhost:1521/PDB1.gse00001970.oraclecloud.internal" //.wbrianleonard.oraclecloud.internal"
     }, function (err, connection) {
         if (err) {
             console.error(err.message);
@@ -175,4 +175,3 @@ function doRelease(connection) {
 }
 
 module.exports = router;
-
